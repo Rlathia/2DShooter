@@ -1,15 +1,21 @@
-﻿using System.Collections;
+﻿//                    COMP3064 CRN13899 Assignment 1
+//                   Submitted to: Przemyslaw Pawluk
+//                      Friday, October 20, 2017        
+//                   From: Rajvi Lathia  - 101034808 
+//                rajvimukeshbhai.lathia@georgebrown.ca
+
+//referenced from MailPilot lab project by Przemyslaw Pawluk
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpaceshipCollision : MonoBehaviour {
 
-	// [SerializeField]
-	// GameController gameController;
 	[SerializeField]
-	GameObject crash;
+	GameController explosion;
 
 	private AudioSource _starSound;
+
 
 	// Use this for initialization
 	void Start () {
@@ -21,19 +27,24 @@ public class SpaceshipCollision : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter2D(Collider2D other){
-
+		//check if spaceship collided with star
 		if (other.gameObject.tag.Equals ("Star")) {
 			Debug.Log ("Collision star\n");
+			other.gameObject.GetComponent<StarController> ().Reset ();//after collision with star, star disappears.
+			//add points
+			Player.Instance.Score += 10;
 			if (_starSound != null) {
-				_starSound.Play ();
+				//_starSound.Play ();
 			}
-		// Add points
-			//Player.Instance.Score+=100;
+			//check if spaceship collided with enemyship
 		} else if (other.gameObject.tag.Equals ("Enemyship")) {
-			Debug.Log ("Collision with enemy spaceship\n");
-			//Instantiate (crash).GetComponent<Transform> ().position = other.gameObject.GetComponent<Transform> ().position;
+			Debug.Log ("Collision with enemyship\n");
+			//Instantiate (explosion).GetComponent<Transform> ().position = other.gameObject.GetComponent<Transform> ().position;
 			other.gameObject.GetComponent<EnemyshipController> ().Reset ();
-			//Player.Instance.Life-=1;
+			//loses life
+			Player.Instance.Life -= 1;
+			//loses score
+			Player.Instance.Score -= 5;
 
 			StartCoroutine("Blink");
 		}
@@ -41,7 +52,6 @@ public class SpaceshipCollision : MonoBehaviour {
 	}
 
 	private IEnumerator Blink(){
-
 		Color c;
 		Renderer renderer = gameObject.GetComponent<Renderer> ();
 		for (int i = 0; i < 3; i++) {
@@ -58,6 +68,5 @@ public class SpaceshipCollision : MonoBehaviour {
 				yield return 0.1f;
 			}
 		}
-
 	}
 }

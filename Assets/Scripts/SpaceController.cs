@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿//                    COMP3064 CRN13899 Assignment 1
+//                   Submitted to: Przemyslaw Pawluk
+//                      Friday, October 20, 2017        
+//                   From: Rajvi Lathia  - 101034808 
+//                rajvimukeshbhai.lathia@georgebrown.ca
+
+//referenced from MailPilot lab project by Przemyslaw Pawluk
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

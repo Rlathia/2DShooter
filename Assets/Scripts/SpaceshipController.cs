@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿//                    COMP3064 CRN13899 Assignment 1
+//                   Submitted to: Przemyslaw Pawluk
+//                      Friday, October 20, 2017        
+//                   From: Rajvi Lathia  - 101034808 
+//                rajvimukeshbhai.lathia@georgebrown.ca
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +20,8 @@ public class SpaceshipController : MonoBehaviour {
 	private float leftX = 0;
 	[SerializeField]
 	private float rightX = 0;
+	[SerializeField]
+	GameObject fireball;
 
 	private Transform _transform;
 	private Vector2 _currentPos;
@@ -24,9 +32,7 @@ public class SpaceshipController : MonoBehaviour {
 		_currentPos = _transform.position;
 	}
 
-	// Update is called once per frame
-	void Update () {
-
+	void Update(){
 		_currentPos = _transform.position;
 		//Storing user inputs into float variables
 		float userInputV = Input.GetAxis ("Vertical");//vertical movement
@@ -55,10 +61,17 @@ public class SpaceshipController : MonoBehaviour {
 			_currentPos += new Vector2(speed, 0);
 		}
 
+		//player shoots fireball when space or left mouse click is pressed
+		if (Input.GetKeyDown("space") || Input.GetButtonDown("Fire1"))
+		{
+			Debug.Log("Shooting fireball");
+			Instantiate(fireball).GetComponent<Transform>().position = new Vector2(_currentPos.x + 30, _currentPos.y);
+		}
+
 		CheckBounds ();
 		_transform.position = _currentPos;
 	}
-
+	//checking boundaries of the player(Spaceship)
 	private void CheckBounds() {
 
 		if (_currentPos.y < upY) {

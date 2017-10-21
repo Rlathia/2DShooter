@@ -1,10 +1,16 @@
-﻿using System.Collections;
+﻿//                    COMP3064 CRN13899 Assignment 1
+//                   Submitted to: Przemyslaw Pawluk
+//                      Friday, October 20, 2017        
+//                   From: Rajvi Lathia  - 101034808 
+//                rajvimukeshbhai.lathia@georgebrown.ca
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StarController : MonoBehaviour {
 
-	//Public variables
+	//variables
 	[SerializeField]
 	private float speed = 5f;
 	[SerializeField]
@@ -30,7 +36,6 @@ public class StarController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		_currentPos = _transform.position;
-		//move ocean down
 		_currentPos -= new Vector2 (speed, 0);
 
 		//check if we need to reset
@@ -43,7 +48,8 @@ public class StarController : MonoBehaviour {
 
 	}
 
-	private void Reset(){
+	//resets the star position and speed
+	public void Reset(){
 		float y = Random.Range (startY, endY);
 		float dx = Random.Range (100, 0);
 		_currentPos = new Vector2 (startX + dx, y);

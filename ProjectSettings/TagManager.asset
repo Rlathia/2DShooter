@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemyship
   - Star
+  - Fireball
   layers:
   - Default
   - TransparentFX
