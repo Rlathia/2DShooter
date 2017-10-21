@@ -30,7 +30,7 @@ public class SpaceshipCollision : MonoBehaviour {
 		//check if spaceship collided with star
 		if (other.gameObject.tag.Equals ("Star")) {
 			Debug.Log ("Collision star\n");
-			other.gameObject.GetComponent<StarController> ().Reset ();//after collision with star, star disappears.
+			other.gameObject.GetComponent<EnemyshipController> ().Reset ();//after collision with star, star disappears.
 			//add points
 			Player.Instance.Score += 10;
 			if (_starSound != null) {

@@ -39,6 +39,7 @@ public class GameController : MonoBehaviour {
 
 	//sets start of the game UI
 	private void initialize(){
+		Time.timeScale = 1;
 		Player.Instance.Score = 0;
 		Player.Instance.Life = 3;
 		lifeLabel.gameObject.SetActive (true);
@@ -52,6 +53,7 @@ public class GameController : MonoBehaviour {
 	//shows game over, high score and play again button
 	//hides life and score label
 	public void gameOver(){
+		Time.timeScale = 0;
 		Player.Instance.Highscore = Player.Instance.Score;
 		lifeLabel.gameObject.SetActive (false);
 		scoreLabel.gameObject.SetActive (false);

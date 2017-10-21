@@ -35,3 +35,4 @@ C:\Users\rajvi\Desktop\SEM 5\Game Development\lab6\MailPilot(5)\2Dshooter\Temp\b
 C:\Users\rajvi\Desktop\SEM 5\Game Development\lab6\MailPilot(5)\2Dshooter\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
 C:\Users\rajvi\Desktop\SEM 5\Game Development\lab6\MailPilot(5)\2Dshooter\obj\Debug\Assembly-CSharp.dll
 C:\Users\rajvi\Desktop\SEM 5\Game Development\lab6\MailPilot(5)\2Dshooter\obj\Debug\Assembly-CSharp.pdb
+C:\Users\rajvi\Desktop\SEM 5\Game Development\lab6\MailPilot(5)\2Dshooter\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache

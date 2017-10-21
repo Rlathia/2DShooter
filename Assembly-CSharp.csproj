@@ -58,7 +58,6 @@
      <Compile Include="Assets\Scripts\SpaceController.cs" />
      <Compile Include="Assets\Scripts\SpaceshipCollision.cs" />
      <Compile Include="Assets\Scripts\SpaceshipController.cs" />
-     <Compile Include="Assets\Scripts\StarController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
